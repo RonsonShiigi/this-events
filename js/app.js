@@ -37,6 +37,18 @@ if(secretMenu.style.display === 'block'){
 }else{secretMenu.style.display= 'block';}
 }
 /*3) to the thumbs down icon that will add a count (counter) for each time the icon is clicked on.*/
+var thumbsDown = document.getElementsByClassName('thumb')
+for (var i=0; i<thumbsDown.length; i++){
+    thumbsDown[i].addEventListener('click', tick)
+    var more = document.createElement('div');
+    more.className = 'bad';
+    thumbsDown[i].appendChild(more);
 
+}
+function tick(){
+    var final = this.querySelectorAll('.bad')[0];
+    final.innerHTML++;
+}
+    
 
 
